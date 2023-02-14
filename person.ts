@@ -1,4 +1,4 @@
-class Person {
+export class Person {
 
     // set up propiedades
 
@@ -50,5 +50,27 @@ class Person {
         return this.experienceYears
     }
 
-    
+    public checkPerson(otherPerson:Person):boolean {
+        let miBool:boolean = true;
+        if ((this.name == otherPerson.getName()) &&
+            (this.nationality == otherPerson.getNationality()) &&
+            (this.profession == otherPerson.getProfession()) &&
+            (this.experienceYears == otherPerson.getExpirienceYears())){
+            return miBool
+            }
+        else {
+            return !miBool
+        }
+    }
+
+    // Imprimir pero no en string?
+    // public printAll() {
+    //     let values:
+    // }
+
+    public toString():void {
+        for (const key in this) {
+            console.log(`${key} - ${this[key]} \n`);
+        }
+    }
 }
